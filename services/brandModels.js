@@ -4,7 +4,7 @@ module.exports = app => {
 
     const getAll = async (req, res) => {
         try {
-            const resposta = await app.db('brandModels')
+            const resposta = await app.db('brand_models')
                 .select()
                 .then(brandModels => Sucesso(brandModels))
                 .catch(erro => Falha(erro));
@@ -16,11 +16,11 @@ module.exports = app => {
     }
 
     const get = async (req, res) => {
-        const { brandModels_id } = req.params;
+        const { brand_models_id } = req.params;
         try {
-            const resposta = await app.db('brandModels')
+            const resposta = await app.db('brand_models')
                 .select()
-                .where({ brandModels_id })
+                .where({ brand_models_id })
                 .then(brandModels => Sucesso(brandModels))
                 .catch(erro => Falha(erro));
 

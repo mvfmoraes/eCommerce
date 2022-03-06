@@ -16,11 +16,11 @@ module.exports = app => {
     }
 
     const get = async (req, res) => {
-        const { mOptionValues_id } = req.params;
+        const { m_option_values_id } = req.params;
         try {
-            const resposta = await app.db('m_option_values') 
+            const resposta = await app.db('m_option_values')
                 .select()
-                .where({mOptionValues_id })
+                .where({ m_option_values_id })
                 .then(mOptionValues => Sucesso(mOptionValues))
                 .catch(erro => Falha(erro));
 

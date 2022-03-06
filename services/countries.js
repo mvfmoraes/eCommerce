@@ -16,9 +16,9 @@ module.exports = app => {
     }
 
     const get = async (req, res) => {
-        const {ecountries_id } = req.params;
+        const { countries_id } = req.params;
         try {
-            const resposta = await app.db('countries') 
+            const resposta = await app.db('countries')
                 .select()
                 .where({ countries_id })
                 .then(countries => Sucesso(countries))
